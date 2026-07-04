@@ -1,7 +1,6 @@
 import { createListenerMiddleware, createSlice, PayloadAction as PA } from '@reduxjs/toolkit';
 
 import { logWarn } from '@/api/utils/logger';
-import lang from '@/lang';
 import { injectFont } from '@/scss/fonts';
 import { RootState } from '@/store';
 import { CUSTOM_CSS_DOM_ID } from '@/utils/constants';
@@ -94,8 +93,8 @@ export const defaultSettings: Settings = {
   youName: 'YOU',
   petMergeID: '',
   shortNumber: false,
-  dispMode: 'single',
-  dispContent: { left: 'hps', right: 'dps' },
+  dispMode: 'dual',
+  dispContent: { left: 'dps', right: 'hps' },
   hlYou: true,
   showMaxHitInContent: false,
   ticker: { top: 'none', bottom: 'dps' },
@@ -103,7 +102,7 @@ export const defaultSettings: Settings = {
   bottomDisp: 'maxhit',
   shortName: 'fstlst',
   mock: false,
-  lang: 'en',
+  lang: 'ja',
   zoom: 1,
   opacity: 1,
   layoutMode: 'common',
@@ -134,15 +133,6 @@ initialState.mock = false;
 function applyLang(value: LangMapKey) {
   logDebug('Store::Settings::applyLang', value);
   document.documentElement.setAttribute('lang', value);
-}
-const availableLangs = Object.keys(lang);
-if (!savedSettings.lang || !availableLangs.includes(savedSettings.lang)) {
-  const detectedLang = navigator.language.substring(0, 2);
-  if (availableLangs.includes(detectedLang)) {
-    logDebug('Store::Settings::initialLangDetected', detectedLang);
-    initialState.lang = detectedLang as LangMapKey;
-    save({ lang: detectedLang as LangMapKey });
-  }
 }
 applyLang(initialState.lang);
 
