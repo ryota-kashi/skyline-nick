@@ -12,7 +12,7 @@ export function fmtNumber(number: number, shortNumber = false) {
   }
 
   if (!shortNumber) {
-    return number ? `${number}` : '0';
+    return number ? number.toLocaleString('en-US') : '0';
   }
 
   let sign = '';
