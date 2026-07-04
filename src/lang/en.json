@@ -1,0 +1,66 @@
+{
+  "LANG": "English",
+
+  "App Ready to Work Offline": "",
+  "Refresh to New Version Available": "",
+
+  "Swings": "",
+  "Deaths": "",
+  "Damage": "",
+  "Overheal": "",
+  "Shielded": "",
+  "Direct": "",
+  "Critical !": "",
+  "DC !!!": "",
+
+  "History": "",
+
+  "About": "",
+  "Need Help": "We need |help| from more community translators!",
+  "Request Issue": "Please |raise an issue| if you have questions or ideas.",
+  "Compile Version": "",
+  "Theme Credits": "",
+
+  "Data": "",
+  "Sort Rule": "",
+  "Max Combatants": "",
+  "Max Players Per Row": "",
+  "Show Limit Break": "",
+  "Custom ID": "",
+  "Pet-Merging ID": "",
+  "Auto Short Number": "",
+
+  "Display": "",
+  "Display Mode": "",
+  "Display Content": "",
+  "Highlight Self": "",
+  "Show Max Hit in Content": "",
+  "Tickers Display": "",
+  "Tickers Align": "",
+  "Bottom Display": "",
+  "Shorten Name": "",
+
+  "General": "",
+  "Mock Data": "",
+  "Language": "",
+  "UI Scale": "",
+  "Opacity": "",
+  "Layout Mode": "",
+  "Font Family": "",
+  "Custom CSS": "",
+  "Transfer Settings": "",
+
+  "Theme": "",
+  "Theme Mode": "",
+  "Common": "",
+  "Self Highlighting": "",
+  "Tickers": "",
+  "Roles": "",
+  "Jobs": "",
+  "Theme Customization": "",
+
+  "Please enter the new value": "",
+  "Copy to clipboard using Ctrl+C": "",
+  "Please enter settings data": "",
+  "Invalid settings data": ""
+}

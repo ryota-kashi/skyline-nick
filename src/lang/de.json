@@ -1,0 +1,66 @@
+{
+  "LANG": "Deutsch",
+
+  "App Ready to Work Offline": "App ist bereit, offline zu arbeiten",
+  "Refresh to New Version Available": "Aktualisieren auf neue verfügbare Version",
+
+  "Swings": "",
+  "Deaths": "",
+  "Damage": "",
+  "Overheal": "",
+  "Shielded": "",
+  "Direct": "",
+  "Critical !": "",
+  "DC !!!": "",
+
+  "History": "Historie",
+
+  "About": "Über",
+  "Need Help": "Hilf uns das Overlay in weitere |Sprachen| zu übersetzen!",
+  "Request Issue": "Fragen oder Ideen? |Eröffne ein Ticket| für weitere Hilfe.",
+  "Compile Version": "Kompilierungsversion",
+  "Theme Credits": "Themen-Credits",
+
+  "Data": "Daten",
+  "Sort Rule": "Sortierung",
+  "Max Combatants": "Maximale Kämpfer",
+  "Max Players Per Row": "Max. Spieler pro Reihe",
+  "Show Limit Break": "Limitrausch anzeigen",
+  "Custom ID": "Benutzerdefinierter Name",
+  "Pet-Merging ID": "Haustier-Zusammenführungs-ID",
+  "Auto Short Number": "Automatische Kurzwahl",
+
+  "Display": "Anzeige",
+  "Display Mode": "Anzeigemodus",
+  "Display Content": "Inhalt anzeigen",
+  "Highlight Self": "Eigene DPS hervorheben",
+  "Show Max Hit in Content": "Max Hit im Inhalt anzeigen",
+  "Tickers Display": "Ticker-Anzeige",
+  "Tickers Align": "Ticker ausrichten",
+  "Bottom Display": "Unteres Display",
+  "Shorten Name": "Namen abkürzen",
+
+  "General": "Allgemein",
+  "Mock Data": "Scheindaten",
+  "Language": "Sprache",
+  "UI Scale": "UI Skalierung",
+  "Opacity": "Opazität",
+  "Layout Mode": "Layout-Modus",
+  "Font Family": "Schriftart",
+  "Custom CSS": "Custom CSS",
+  "Transfer Settings": "Einstellungen übernehmen",
+
+  "Theme": "Thema",
+  "Theme Mode": "Themenmodus",
+  "Common": "Gemeinsam",
+  "Self Highlighting": "Selbsthervorhebung",
+  "Tickers": "Ticker",
+  "Roles": "Rollen",
+  "Jobs": "Jobs",
+  "Theme Customization": "Theme-Anpassung",
+
+  "Please enter the new value": "Bitte geben Sie den neuen Wert ein",
+  "Copy to clipboard using Ctrl+C": "Mit Ctrl+C in die Zwischenablage kopieren",
+  "Please enter settings data": "Bitte geben Sie Einstellungsdaten ein",
+  "Invalid settings data": "Ungültige Einstellungsdaten"
+}

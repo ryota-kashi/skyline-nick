@@ -1,0 +1,66 @@
+{
+  "LANG": "日本語",
+
+  "App Ready to Work Offline": "アプリはオフラインで動作する準備ができています",
+  "Refresh to New Version Available": "新しいバージョンが利用可能",
+
+  "Swings": "打撃回数",
+  "Deaths": "死亡回数",
+  "Damage": "ダメージ値",
+  "Overheal": "オーバーヒール",
+  "Shielded": "シールド",
+  "Direct": "",
+  "Critical !": "",
+  "DC !!!": "",
+
+  "History": "履歴",
+
+  "About": "情報",
+  "Need Help": "もっと多くのコミュニティ翻訳者の|助けが|必要です！",
+  "Request Issue": "質問や提案があれば、|issue を立てて|ください。",
+  "Compile Version": "コンパイルバージョン",
+  "Theme Credits": "テーマクレジット",
+
+  "Data": "データ",
+  "Sort Rule": "ソートルール",
+  "Max Combatants": "最大表示人数",
+  "Max Players Per Row": "一行あたりの最大表示人数",
+  "Show Limit Break": "Limit Break 表示",
+  "Custom ID": "カスタム ID",
+  "Pet-Merging ID": "ペット合算 ID",
+  "Auto Short Number": "カウンターをイニシャルで表示",
+
+  "Display": "表示",
+  "Display Mode": "表示モード",
+  "Display Content": "表示内容",
+  "Highlight Self": "自分を強調表示",
+  "Show Max Hit in Content": "コンテンツ内にMaxHitを表示",
+  "Tickers Display": "ティッカー表示",
+  "Tickers Align": "ティッカーアライメント",
+  "Bottom Display": "ボトム表示内容",
+  "Shorten Name": "名前をイニシャルで表示",
+
+  "General": "一般",
+  "Mock Data": "模擬データ",
+  "Language": "言語",
+  "UI Scale": "UI サイズ",
+  "Opacity": "透明度",
+  "Layout Mode": "レイアウトモード",
+  "Font Family": "フォント",
+  "Custom CSS": "カスタム CSS",
+  "Transfer Settings": "設定を転送",
+
+  "Theme": "テーマ",
+  "Theme Mode": "テーマモード",
+  "Common": "一般",
+  "Self Highlighting": "自分を強調表示",
+  "Tickers": "ティッカー",
+  "Roles": "ロール",
+  "Jobs": "ジョブ",
+  "Theme Customization": "テーマのカスタマイズ",
+
+  "Please enter the new value": "新しい値を入力してください",
+  "Copy to clipboard using Ctrl+C": "Ctrl+C を押してクリップボードにコピー",
+  "Please enter settings data": "設定データを入力してください",
+  "Invalid settings data": "設定データが不正です"
+}

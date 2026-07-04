@@ -1,0 +1,45 @@
+# auto gen meta
+src/assets/meta.ts
+
+# vite
+*.local
+vite.config.ts.js
+
+# custom
+.env*
+start-overlay-server.bat
+
+# output
+dist/
+dev-dist/
+dist-ssr/
+stats.html
+*.tsbuildinfo
+
+# logs
+logs/
+*.log
+npm-debug.log*
+
+# diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# dependency directories
+.npm/
+node_modules/
+package-lock.json
+
+# system
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

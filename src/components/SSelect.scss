@@ -1,0 +1,89 @@
+@use '../scss/variables' as var;
+
+.s-select {
+  position: relative;
+  height: var.$size-form;
+  line-height: var.$size-form;
+  min-width: var.$size-form-minwidth;
+  text-align: center;
+  cursor: pointer;
+  text-shadow: var(--shadow-form);
+
+  &-value {
+    color: var(--color-form-fg);
+    background-color: var(--color-form-bg);
+    display: flex;
+    height: var.$size-form;
+    line-height: var.$size-form;
+
+    .disp {
+      flex: 1 1 auto;
+      padding: 0 0.04rem;
+    }
+
+    .btn {
+      flex: 0 0 auto;
+      height: var.$size-form;
+      width: var.$size-form;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    &--active,
+    &:hover {
+      color: var(--color-form-fg-active);
+      background-color: var(--color-form-bg-active);
+      text-shadow: var(--shadow-form-active);
+    }
+  }
+
+  &-options {
+    position: absolute;
+    color: var(--color-form-fg);
+    background-color: var(--color-form-bg);
+    z-index: 999;
+    width: 100%;
+
+    &-bottom {
+      top: var.$size-form;
+    }
+    &-top {
+      bottom: var.$size-form;
+    }
+  }
+
+  &-option {
+    &:hover {
+      color: var(--color-form-fg-active);
+      background-color: var(--color-form-bg-active);
+      text-shadow: var(--shadow-form-active);
+    }
+  }
+
+  &-options-r3mode {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .s-select-option {
+      flex: 1 0 33.33%;
+      overflow: hidden;
+    }
+  }
+
+  &--disabled {
+    .s-select-value {
+      color: var(--color-form-fg-disabled);
+      background-color: var(--color-form-bg-disabled);
+
+      &:hover {
+        cursor: not-allowed;
+        color: var(--color-form-fg-disabled);
+        background-color: var(--color-form-bg-disabled);
+        text-shadow: var(--shadow-form);
+      }
+    }
+  }
+}

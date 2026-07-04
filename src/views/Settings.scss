@@ -1,0 +1,227 @@
+@use '../scss/variables' as var;
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.settings {
+  margin-top: var.$padding-md;
+  font-size: var.$font-size-sm;
+  flex: 0 0 auto;
+  width: 4rem;
+  color: var(--color-settings-fg);
+  background-color: var(--color-settings-bg);
+  text-shadow: var(--shadow-settings);
+  backdrop-filter: var.$filter;
+
+  &-reverse {
+    position: absolute;
+    top: calc(0.22rem + var.$padding-md);
+  }
+
+  &-tab {
+    color: var(--color-settings-tab-fg);
+    background-color: var(--color-settings-tab-bg);
+    text-shadow: var(--shadow-settings-tab);
+    height: var.$size-form;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  &-tabitem {
+    display: inline-block;
+    flex: 1 1 auto;
+    padding: 0 var.$padding-lg;
+    height: var.$size-form;
+    line-height: var.$size-form;
+    text-align: center;
+    cursor: pointer;
+
+    &--active,
+    &:hover {
+      text-shadow: var(--shadow-settings-tab-active);
+      color: var(--color-settings-tab-fg-active);
+      background-color: var(--color-settings-tab-bg-active);
+    }
+  }
+
+  &-about,
+  &-data,
+  &-display,
+  &-general,
+  &-theme {
+    padding: var.$padding-lg;
+  }
+
+  &-row {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: space-between;
+
+    // first settings line has top padding
+    &:not(:first-child) {
+      margin-top: var.$padding-md;
+    }
+
+    // child form items styles
+    & > *:first-child {
+      flex: 1 1 auto;
+    }
+    & > *:not(:last-child) {
+      margin-right: var.$padding-md;
+    }
+
+    .g-link {
+      display: inline-block;
+      height: var.$size-form;
+      line-height: var.$size-form;
+    }
+  }
+
+  &-title {
+    display: inline-block;
+    height: var.$size-form;
+    line-height: var.$size-form;
+  }
+
+  &-btn {
+    width: var.$size-form;
+    min-width: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+    height: var.$size-form;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-form-fg);
+    background-color: var(--color-form-bg);
+    text-shadow: var(--shadow-form);
+
+    &:hover {
+      color: var(--color-form-fg-active);
+      background-color: var(--color-form-bg-active);
+      text-shadow: var(--shadow-form-active);
+    }
+
+    &-rotate .g-icon {
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  // transfer module
+  &-transfer {
+    display: flex;
+    gap: var.$padding-md;
+  }
+}
+
+// custom settings items
+.settings {
+  &-sort-rule {
+    width: 0.72rem;
+    min-width: 0;
+  }
+
+  &-display-content,
+  &-ticker-display,
+  &-ticker-align {
+    width: 0.9rem;
+    min-width: 0;
+  }
+
+  &-custom-css {
+    width: 1.6rem;
+    min-width: 0;
+  }
+
+  &-font-family {
+    width: 0.9rem;
+    min-width: 0;
+  }
+  &-font-weight {
+    width: 0.9rem;
+    min-width: 0;
+  }
+
+  &-theme-input {
+    width: 1.46rem;
+    min-width: 0;
+  }
+}
+
+.settings-history {
+  height: 6 * var.$size-form + 2 * var.$padding-lg + 5 * var.$padding-md;
+  overflow: hidden;
+  padding: var.$padding-lg 0;
+
+  &-row {
+    height: var.$size-form;
+    line-height: var.$size-form;
+    display: flex;
+    cursor: pointer;
+
+    &:hover,
+    &--active {
+      color: var(--color-form-fg-active);
+      background-color: var(--color-form-bg-active);
+      text-shadow: var(--shadow-form-active);
+    }
+
+    &:not(:first-child) {
+      margin-top: var.$padding-md;
+    }
+  }
+
+  &-item {
+    white-space: nowrap;
+    overflow: hidden;
+    flex: 0 0 auto;
+
+    margin-left: var.$padding-md;
+    &:last-child {
+      margin-right: var.$padding-md;
+    }
+  }
+
+  &-duration {
+    flex: 0 0 auto;
+    width: 0.38rem;
+    text-align: center;
+  }
+
+  &-time {
+    flex: 0 0 auto;
+    width: 0.58rem;
+    text-align: center;
+  }
+
+  &-zone {
+    flex: 1 1 auto;
+    text-overflow: ellipsis;
+    min-width: 0;
+    padding: 0 var.$padding-sm;
+  }
+
+  &-dps {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding-right: var.$padding-lg;
+  }
+}
+
+.settings-colors-grid {
+  max-width: var.$size-form * 11 + var.$padding-md * 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var.$padding-md;
+  justify-content: flex-end;
+  align-items: center;
+}

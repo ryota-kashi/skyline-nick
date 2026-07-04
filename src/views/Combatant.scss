@@ -1,0 +1,182 @@
+@use '../scss/variables' as var;
+
+.combatant {
+  position: relative;
+  flex: 0 0 auto;
+  width: 1.2rem;
+  margin: 0 var.$padding-sm;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-combatant-fg);
+  text-shadow: var(--shadow-combatant);
+
+  &-name,
+  &-bottom {
+    line-height: var.$size-form;
+    height: var.$size-form;
+    font-size: var.$font-size-sm;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-name {
+    cursor: pointer;
+
+    &--blured {
+      filter: var.$filter;
+    }
+  }
+
+  &-bottom {
+    &-maxhit {
+      & > span:first-child {
+        flex: 0 1 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      & > span:last-child {
+        flex: 0 0 auto;
+      }
+    }
+
+    &-cdpcts {
+      text-align: center;
+
+      & > span {
+        text-align: center;
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    padding: 0.04rem 0.08rem;
+    background-color: var(--color-common);
+    backdrop-filter: var.$filter;
+    cursor: pointer;
+
+    &-row {
+      position: relative;
+      height: 0.16rem;
+    }
+
+    &-data {
+      height: 0.16rem;
+      line-height: 0.16rem;
+      text-align: right;
+
+      .g-counter {
+        height: 0.14rem;
+        line-height: 0.14rem;
+      }
+
+      .g-number {
+        height: 0.16rem;
+        line-height: 0.16rem;
+      }
+    }
+
+    &-maxhit {
+      height: 0.14rem;
+      line-height: 0.14rem;
+      font-size: var.$font-size-xs;
+      display: flex;
+      justify-content: center;
+      white-space: nowrap;
+
+      & > span:first-child {
+        flex: 0 1 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      & > span:last-child {
+        flex: 0 0 auto;
+      }
+    }
+
+    .job-icon {
+      position: absolute;
+      top: -0.04rem;
+      left: 0.05rem;
+      width: 0.24rem;
+      height: 0.24rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .g-icon {
+        font-size: 0.24rem;
+        filter: drop-shadow(var(--icon-shadow));
+        color: var(--icon-color);
+      }
+    }
+  }
+
+  &-detail {
+    position: absolute;
+    left: 0;
+    right: 0;
+    // top: 0.50rem; // each ticker 0.04rem
+    z-index: 999;
+    backdrop-filter: var.$filter;
+    background-color: var(--color-common);
+  }
+
+  &-no-detail &-content {
+    cursor: default;
+  }
+}
+
+.combatant-dual {
+  .combatant {
+    &-content-row {
+      height: 0.32rem;
+      display: flex;
+    }
+
+    &-content {
+      &-data {
+        height: 0.32rem;
+        flex: 1 1 auto;
+        width: 50%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+
+        &:first-child {
+          align-items: flex-start;
+        }
+
+        &:last-child {
+          align-items: flex-end;
+        }
+
+        .g-counter {
+          height: 0.14rem;
+          line-height: 0.14rem;
+          margin: 0 0.02rem;
+        }
+
+        .g-number {
+          height: 0.18rem;
+          line-height: 0.18rem;
+          margin: 0 0.01rem;
+        }
+      }
+    }
+  }
+
+  .job-icon {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: -0.04rem;
+    width: 0.22rem;
+    height: 0.22rem;
+  }
+}
