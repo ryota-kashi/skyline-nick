@@ -75,12 +75,22 @@ function SettingsDisplay() {
       {
         title: t('Content Display'),
         render: () => (
-          <SSelect
-            value={contentDisp}
-            onChange={(v) => dispatch(updateContentDisp(v))}
-            map={MAP_CONTENT_DISP}
-            position='top'
-          />
+          <>
+            <SSelect
+              className='settings-display-content'
+              value={contentDisp.row1}
+              onChange={(row1) => dispatch(updateContentDisp({ row1 }))}
+              map={MAP_CONTENT_DISP}
+              position='top'
+            />
+            <SSelect
+              className='settings-display-content'
+              value={contentDisp.row2}
+              onChange={(row2) => dispatch(updateContentDisp({ row2 }))}
+              map={MAP_CONTENT_DISP}
+              position='top'
+            />
+          </>
         ),
       },
       {

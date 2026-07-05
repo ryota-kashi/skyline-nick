@@ -4,7 +4,7 @@ import { CombatantData, LimitBreakData } from '@/api';
 import * as jobIcons from '@/assets/jobs';
 import { useAppSelector } from '@/hooks';
 import { fmtNumber } from '@/utils/formatters';
-import { MAP_DISPLAY_CONTENT } from '@/utils/maps';
+import { ContentDispMapKey, MAP_DISPLAY_CONTENT } from '@/utils/maps';
 import { isCombatantData, isLimitBreakData } from '@/utils/type';
 
 interface CombatantContentProps {
@@ -54,6 +54,29 @@ function CombatantContent({
     : jobIcons[String.prototype.toUpperCase.apply(player.job) as keyof typeof jobIcons] ||
       jobIcons.FFXIV;
 
+  // renders one of the selectable extra content rows (max hit / recent dps / none)
+  const renderContentExtra = (kind: ContentDispMapKey) => {
+    if (kind === 'maxhit' && maxHitName) {
+      return (
+        <div className='combatant-content-maxhit'>
+          <span>{maxHitName}</span>
+          {maxHitValue > 0 && <span>-&nbsp;{fmtNumber(maxHitValue, shortNumber)}</span>}
+        </div>
+      );
+    }
+    if (kind === 'recentdps' && isCombatantData(player)) {
+      return (
+        <div className='combatant-content-recentdps'>
+          <span className='combatant-content-recentdps-label'>60s</span>
+          <span className='combatant-content-recentdps-value'>
+            {fmtNumber(player.last60DPS, shortNumber)}
+          </span>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <div
       className='combatant-content'
@@ -82,20 +105,8 @@ function CombatantContent({
         </div>
       </div>
       {showContentDivider && <div className='combatant-content-divider' />}
-      {contentDisp === 'maxhit' && maxHitName && (
-        <div className='combatant-content-maxhit'>
-          <span>{maxHitName}</span>
-          {maxHitValue > 0 && <span>-&nbsp;{fmtNumber(maxHitValue, shortNumber)}</span>}
-        </div>
-      )}
-      {contentDisp === 'recentdps' && isCombatantData(player) && (
-        <div className='combatant-content-recentdps'>
-          <span className='combatant-content-recentdps-label'>60s</span>
-          <span className='combatant-content-recentdps-value'>
-            {fmtNumber(player.last60DPS, shortNumber)}
-          </span>
-        </div>
-      )}
+      {renderContentExtra(contentDisp.row1)}
+      {renderContentExtra(contentDisp.row2)}
     </div>
   );
 }

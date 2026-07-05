@@ -34,6 +34,10 @@ interface DispContentSettings {
   left: DisplayContentMapKey;
   right: DisplayContentMapKey;
 }
+interface ContentDispSettings {
+  row1: ContentDispMapKey;
+  row2: ContentDispMapKey;
+}
 interface TickerSettings {
   top: TickerMapKey;
   bottom: TickerMapKey;
@@ -60,7 +64,7 @@ export interface Settings {
   dispMode: DisplayModeMapKey;
   dispContent: DispContentSettings;
   hlYou: boolean;
-  contentDisp: ContentDispMapKey;
+  contentDisp: ContentDispSettings;
   showContentDivider: boolean;
   ticker: TickerSettings;
   tickerAlign: TickerAlignSettings;
@@ -98,7 +102,7 @@ export const defaultSettings: Settings = {
   dispMode: 'dual',
   dispContent: { left: 'dps', right: 'hps' },
   hlYou: true,
-  contentDisp: 'none',
+  contentDisp: { row1: 'none', row2: 'none' },
   showContentDivider: false,
   ticker: { top: 'none', bottom: 'dps' },
   tickerAlign: { top: 'right', bottom: 'left' },
@@ -257,9 +261,9 @@ export const settingsSlice = createSlice({
       state.hlYou = payload;
       save({ hlYou: state.hlYou });
     },
-    updateContentDisp(state, { payload }: PA<ContentDispMapKey>) {
+    updateContentDisp(state, { payload }: PA<Partial<ContentDispSettings>>) {
       logDebug('Store::Settings::updateContentDisp', payload);
-      state.contentDisp = payload;
+      state.contentDisp = { ...state.contentDisp, ...payload };
       save({ contentDisp: state.contentDisp });
     },
     updateShowContentDivider(state, { payload }: PA<boolean>) {
