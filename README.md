@@ -11,6 +11,13 @@
 ![](https://img.shields.io/badge/ffxiv-dawntrail-orange)
 [![](https://img.shields.io/github/license/dsrkafuu/skyline-overlay)](https://github.com/dsrkafuu/skyline-overlay/blob/main/LICENSE)
 
+> **This is a personal fork of [dsrkafuu/skyline-overlay](https://github.com/dsrkafuu/skyline-overlay)**, modified for personal use. Not affiliated with or endorsed by the original author. See [LICENSE](LICENSE) (Apache License 2.0).
+>
+> Changes from upstream:
+> - Added an optional "Show Max Hit in Content" setting: displays the highest hit/heal skill name and damage under the DPS/HPS numbers
+> - Numbers now show thousands separators (e.g. `226,805`) when "Auto Short Number" is off
+> - Default settings changed to dual display mode (DPS left / HPS right) and Japanese language
+
 Features: Basic overlay, extended details, customizable display/data settings, battle history, custom colors, sw cache and more. The project is based on React 18, and the dedicated [ffxiv-overlay-api](https://github.com/dsrkafuu/ffxiv-overlay-api).
 
 <img align="center" src="https://raw.githubusercontent.com/dsrkafuu/skyline-overlay/refs/heads/main/assets/preview-zh-v4.png" alt="Skyline Preview" />
