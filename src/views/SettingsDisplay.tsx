@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector, useTranslation } from '@/hooks';
 import {
   updateBottomDisp,
   updateContentDisp,
+  updateDimEncounterBar,
   updateDispContent,
   updateDispMode,
   updateHlYou,
@@ -30,6 +31,7 @@ function SettingsDisplay() {
   const hlYou = useAppSelector((state) => state.settings.hlYou);
   const contentDisp = useAppSelector((state) => state.settings.contentDisp);
   const showContentDivider = useAppSelector((state) => state.settings.showContentDivider);
+  const dimEncounterBar = useAppSelector((state) => state.settings.dimEncounterBar);
   const ticker = useAppSelector((state) => state.settings.ticker);
   const tickerAlign = useAppSelector((state) => state.settings.tickerAlign);
   const bottomDisp = useAppSelector((state) => state.settings.bottomDisp);
@@ -98,6 +100,15 @@ function SettingsDisplay() {
           <SSwitch
             value={showContentDivider}
             onChange={(v) => dispatch(updateShowContentDivider(v))}
+          />
+        ),
+      },
+      {
+        title: t('Dim Encounter Bar'),
+        render: () => (
+          <SSwitch
+            value={dimEncounterBar}
+            onChange={(v) => dispatch(updateDimEncounterBar(v))}
           />
         ),
       },
@@ -176,6 +187,7 @@ function SettingsDisplay() {
       hlYou,
       contentDisp,
       showContentDivider,
+      dimEncounterBar,
       ticker,
       tickerAlign,
       bottomDisp,

@@ -65,6 +65,7 @@ export interface Settings {
   hlYou: boolean;
   contentDisp: ContentDispSettings;
   showContentDivider: boolean;
+  dimEncounterBar: boolean;
   ticker: TickerSettings;
   tickerAlign: TickerAlignSettings;
   bottomDisp: BottomDispMapKey;
@@ -103,6 +104,7 @@ export const defaultSettings: Settings = {
   hlYou: true,
   contentDisp: { row1: 'none', row2: 'none' },
   showContentDivider: false,
+  dimEncounterBar: false,
   ticker: { top: 'none', bottom: 'dps' },
   tickerAlign: { top: 'right', bottom: 'left' },
   bottomDisp: 'maxhit',
@@ -270,6 +272,11 @@ export const settingsSlice = createSlice({
       state.showContentDivider = payload;
       save({ showContentDivider: state.showContentDivider });
     },
+    updateDimEncounterBar(state, { payload }: PA<boolean>) {
+      logDebug('Store::Settings::updateDimEncounterBar', payload);
+      state.dimEncounterBar = payload;
+      save({ dimEncounterBar: state.dimEncounterBar });
+    },
     updateTicker(state, { payload }: PA<Partial<TickerSettings>>) {
       logDebug('Store::Settings::updateTicker', payload);
       state.ticker = { ...state.ticker, ...payload };
@@ -363,6 +370,7 @@ export const {
   updateHlYou,
   updateContentDisp,
   updateShowContentDivider,
+  updateDimEncounterBar,
   updateTicker,
   updateTickerAlign,
   updateBottomDisp,

@@ -25,6 +25,7 @@ function Encounter() {
   const showCombatants = useAppSelector((state) => state.settings.showCombatants);
   const shortNumber = useAppSelector((state) => state.settings.shortNumber);
   const layoutMode = useAppSelector((state) => state.settings.layoutMode);
+  const dimEncounterBar = useAppSelector((state) => state.settings.dimEncounterBar);
 
   // encounter data
   const duration = fmtDuration(encounter.duration);
@@ -81,6 +82,7 @@ function Encounter() {
       className={clsx({
         encounter: true,
         'encounter-reverse': layoutMode === 'reverse',
+        'encounter--dimmed': dimEncounterBar,
       })}
     >
       <div

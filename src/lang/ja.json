@@ -36,6 +36,7 @@
   "Highlight Self": "自分を強調表示",
   "Content Display": "コンテンツ表示内容",
   "Show Divider Below DPS": "DPS数値の下に区切り線を表示",
+  "Dim Encounter Bar": "上部バーを普段は薄く表示(ホバーで表示)",
   "Tickers Display": "ティッカー表示",
   "Tickers Align": "ティッカーアライメント",
   "Bottom Display": "ボトム表示内容",

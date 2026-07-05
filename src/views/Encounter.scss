@@ -12,6 +12,15 @@
     margin-bottom: var.$padding-md;
   }
 
+  &--dimmed {
+    opacity: 0.15;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   &-duration {
     cursor: pointer;
     flex: 0 0 auto;
