@@ -15,7 +15,6 @@ import {
   TickerAlignMapKey,
   TickerMapKey,
   BottomDispMapKey,
-  ContentDispMapKey,
   FontFamilyMapKey,
   LayoutModeMapKey,
   MAP_FONT_FAMILY,
@@ -35,8 +34,8 @@ interface DispContentSettings {
   right: DisplayContentMapKey;
 }
 interface ContentDispSettings {
-  row1: ContentDispMapKey;
-  row2: ContentDispMapKey;
+  row1: BottomDispMapKey;
+  row2: BottomDispMapKey;
 }
 interface TickerSettings {
   top: TickerMapKey;

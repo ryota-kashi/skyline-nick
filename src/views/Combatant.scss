@@ -129,6 +129,15 @@
       }
     }
 
+    &-cdpcts {
+      height: 0.14rem;
+      line-height: 0.14rem;
+      font-size: var.$font-size-xs;
+      display: flex;
+      justify-content: space-evenly;
+      white-space: nowrap;
+    }
+
     .job-icon {
       position: absolute;
       top: -0.04rem;

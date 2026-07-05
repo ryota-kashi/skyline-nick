@@ -19,7 +19,6 @@ import {
   MAP_TICKER,
   MAP_TICKER_ALIGN,
   MAP_BOTTOM_DISP,
-  MAP_CONTENT_DISP,
   MAP_SHORT_NAME,
 } from '@/utils/maps';
 
@@ -80,14 +79,14 @@ function SettingsDisplay() {
               className='settings-display-content'
               value={contentDisp.row1}
               onChange={(row1) => dispatch(updateContentDisp({ row1 }))}
-              map={MAP_CONTENT_DISP}
+              map={MAP_BOTTOM_DISP}
               position='top'
             />
             <SSelect
               className='settings-display-content'
               value={contentDisp.row2}
               onChange={(row2) => dispatch(updateContentDisp({ row2 }))}
-              map={MAP_CONTENT_DISP}
+              map={MAP_BOTTOM_DISP}
               position='top'
             />
           </>

@@ -4,7 +4,7 @@ import { CombatantData, LimitBreakData } from '@/api';
 import * as jobIcons from '@/assets/jobs';
 import { useAppSelector } from '@/hooks';
 import { fmtNumber } from '@/utils/formatters';
-import { ContentDispMapKey, MAP_DISPLAY_CONTENT } from '@/utils/maps';
+import { BottomDispMapKey, MAP_DISPLAY_CONTENT } from '@/utils/maps';
 import { isCombatantData, isLimitBreakData } from '@/utils/type';
 
 interface CombatantContentProps {
@@ -54,8 +54,8 @@ function CombatantContent({
     : jobIcons[String.prototype.toUpperCase.apply(player.job) as keyof typeof jobIcons] ||
       jobIcons.FFXIV;
 
-  // renders one of the selectable extra content rows (max hit / recent dps / none)
-  const renderContentExtra = (kind: ContentDispMapKey) => {
+  // renders one of the selectable extra content rows
+  const renderContentExtra = (kind: BottomDispMapKey) => {
     if (kind === 'maxhit' && maxHitName) {
       return (
         <div className='combatant-content-maxhit'>
@@ -64,13 +64,42 @@ function CombatantContent({
         </div>
       );
     }
-    if (kind === 'recentdps' && isCombatantData(player)) {
+    if (kind === 'last60DPS' && isCombatantData(player)) {
       return (
         <div className='combatant-content-recentdps'>
           <span className='combatant-content-recentdps-label'>60s</span>
           <span className='combatant-content-recentdps-value'>
             {fmtNumber(player.last60DPS, shortNumber)}
           </span>
+        </div>
+      );
+    }
+    if (kind === 'cdpcts' && isCombatantData(player)) {
+      const { directHitPct, critHitPct, directCritHitPct } = player;
+      return (
+        <div className='combatant-content-cdpcts'>
+          <span>{directCritHitPct}CD</span>
+          <span>{critHitPct}C</span>
+          <span>{directHitPct}D</span>
+        </div>
+      );
+    }
+    if (kind === 'cdpcts-reverse' && isCombatantData(player)) {
+      const { directHitPct, critHitPct, directCritHitPct } = player;
+      return (
+        <div className='combatant-content-cdpcts'>
+          <span>{directHitPct}D</span>
+          <span>{critHitPct}C</span>
+          <span>{directCritHitPct}CD</span>
+        </div>
+      );
+    }
+    if (kind === 'damagePctDeaths' && isCombatantData(player)) {
+      const { damagePct, deaths } = player;
+      return (
+        <div className='combatant-content-cdpcts'>
+          <span>{damagePct || '0%'}DMG</span>
+          <span>{deaths}DT</span>
         </div>
       );
     }
