@@ -25,10 +25,7 @@ function CombatantContent({
   const dispMode = useAppSelector((state) => state.settings.dispMode);
   const dispContent = useAppSelector((state) => state.settings.dispContent);
   const shortNumber = useAppSelector((state) => state.settings.shortNumber);
-  const showMaxHitInContent = useAppSelector((state) => state.settings.showMaxHitInContent);
-  const showRecentDPSInContent = useAppSelector(
-    (state) => state.settings.showRecentDPSInContent
-  );
+  const contentDisp = useAppSelector((state) => state.settings.contentDisp);
   const showContentDivider = useAppSelector((state) => state.settings.showContentDivider);
 
   const leftDisp = (player as CombatantData)[dispContent.left] || 0;
@@ -85,16 +82,18 @@ function CombatantContent({
         </div>
       </div>
       {showContentDivider && <div className='combatant-content-divider' />}
-      {showMaxHitInContent && maxHitName && (
+      {contentDisp === 'maxhit' && maxHitName && (
         <div className='combatant-content-maxhit'>
           <span>{maxHitName}</span>
           {maxHitValue > 0 && <span>-&nbsp;{fmtNumber(maxHitValue, shortNumber)}</span>}
         </div>
       )}
-      {showRecentDPSInContent && isCombatantData(player) && (
+      {contentDisp === 'recentdps' && isCombatantData(player) && (
         <div className='combatant-content-recentdps'>
           <span className='combatant-content-recentdps-label'>60s</span>
-          <span className='g-number'>{fmtNumber(player.last60DPS, shortNumber)}</span>
+          <span className='combatant-content-recentdps-value'>
+            {fmtNumber(player.last60DPS, shortNumber)}
+          </span>
         </div>
       )}
     </div>

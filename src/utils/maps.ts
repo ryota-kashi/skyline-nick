@@ -81,6 +81,15 @@ const bottomDispMap = {
 export type BottomDispMapKey = keyof typeof bottomDispMap & string;
 export const MAP_BOTTOM_DISP = bottomDispMap;
 
+// content extra row display map
+const contentDispMap = {
+  none: { text: 'None' },
+  maxhit: { text: 'Max Hit' },
+  recentdps: { text: 'DPS (60s)' },
+};
+export type ContentDispMapKey = keyof typeof contentDispMap & string;
+export const MAP_CONTENT_DISP = contentDispMap;
+
 export type LangMapKey = keyof typeof rawLang & string;
 export const MAP_LANG = rawLang;
 

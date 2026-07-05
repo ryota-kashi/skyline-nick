@@ -15,6 +15,7 @@ import {
   TickerAlignMapKey,
   TickerMapKey,
   BottomDispMapKey,
+  ContentDispMapKey,
   FontFamilyMapKey,
   LayoutModeMapKey,
   MAP_FONT_FAMILY,
@@ -59,8 +60,7 @@ export interface Settings {
   dispMode: DisplayModeMapKey;
   dispContent: DispContentSettings;
   hlYou: boolean;
-  showMaxHitInContent: boolean;
-  showRecentDPSInContent: boolean;
+  contentDisp: ContentDispMapKey;
   showContentDivider: boolean;
   ticker: TickerSettings;
   tickerAlign: TickerAlignSettings;
@@ -98,8 +98,7 @@ export const defaultSettings: Settings = {
   dispMode: 'dual',
   dispContent: { left: 'dps', right: 'hps' },
   hlYou: true,
-  showMaxHitInContent: false,
-  showRecentDPSInContent: false,
+  contentDisp: 'none',
   showContentDivider: false,
   ticker: { top: 'none', bottom: 'dps' },
   tickerAlign: { top: 'right', bottom: 'left' },
@@ -258,15 +257,10 @@ export const settingsSlice = createSlice({
       state.hlYou = payload;
       save({ hlYou: state.hlYou });
     },
-    updateShowMaxHitInContent(state, { payload }: PA<boolean>) {
-      logDebug('Store::Settings::updateShowMaxHitInContent', payload);
-      state.showMaxHitInContent = payload;
-      save({ showMaxHitInContent: state.showMaxHitInContent });
-    },
-    updateShowRecentDPSInContent(state, { payload }: PA<boolean>) {
-      logDebug('Store::Settings::updateShowRecentDPSInContent', payload);
-      state.showRecentDPSInContent = payload;
-      save({ showRecentDPSInContent: state.showRecentDPSInContent });
+    updateContentDisp(state, { payload }: PA<ContentDispMapKey>) {
+      logDebug('Store::Settings::updateContentDisp', payload);
+      state.contentDisp = payload;
+      save({ contentDisp: state.contentDisp });
     },
     updateShowContentDivider(state, { payload }: PA<boolean>) {
       logDebug('Store::Settings::updateShowContentDivider', payload);
@@ -364,8 +358,7 @@ export const {
   updateDispMode,
   updateDispContent,
   updateHlYou,
-  updateShowMaxHitInContent,
-  updateShowRecentDPSInContent,
+  updateContentDisp,
   updateShowContentDivider,
   updateTicker,
   updateTickerAlign,

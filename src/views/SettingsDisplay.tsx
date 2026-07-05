@@ -4,13 +4,12 @@ import { SSelect, SSwitch } from '@/components';
 import { useAppDispatch, useAppSelector, useTranslation } from '@/hooks';
 import {
   updateBottomDisp,
+  updateContentDisp,
   updateDispContent,
   updateDispMode,
   updateHlYou,
   updateShortName,
   updateShowContentDivider,
-  updateShowMaxHitInContent,
-  updateShowRecentDPSInContent,
   updateTicker,
   updateTickerAlign,
 } from '@/store/slices/settings';
@@ -20,6 +19,7 @@ import {
   MAP_TICKER,
   MAP_TICKER_ALIGN,
   MAP_BOTTOM_DISP,
+  MAP_CONTENT_DISP,
   MAP_SHORT_NAME,
 } from '@/utils/maps';
 
@@ -29,10 +29,7 @@ function SettingsDisplay() {
   const dispMode = useAppSelector((state) => state.settings.dispMode);
   const dispContent = useAppSelector((state) => state.settings.dispContent);
   const hlYou = useAppSelector((state) => state.settings.hlYou);
-  const showMaxHitInContent = useAppSelector((state) => state.settings.showMaxHitInContent);
-  const showRecentDPSInContent = useAppSelector(
-    (state) => state.settings.showRecentDPSInContent
-  );
+  const contentDisp = useAppSelector((state) => state.settings.contentDisp);
   const showContentDivider = useAppSelector((state) => state.settings.showContentDivider);
   const ticker = useAppSelector((state) => state.settings.ticker);
   const tickerAlign = useAppSelector((state) => state.settings.tickerAlign);
@@ -76,20 +73,13 @@ function SettingsDisplay() {
         render: () => <SSwitch value={hlYou} onChange={(v) => dispatch(updateHlYou(v))} />,
       },
       {
-        title: t('Show Max Hit in Content'),
+        title: t('Content Display'),
         render: () => (
-          <SSwitch
-            value={showMaxHitInContent}
-            onChange={(v) => dispatch(updateShowMaxHitInContent(v))}
-          />
-        ),
-      },
-      {
-        title: t('Show Recent DPS in Content'),
-        render: () => (
-          <SSwitch
-            value={showRecentDPSInContent}
-            onChange={(v) => dispatch(updateShowRecentDPSInContent(v))}
+          <SSelect
+            value={contentDisp}
+            onChange={(v) => dispatch(updateContentDisp(v))}
+            map={MAP_CONTENT_DISP}
+            position='top'
           />
         ),
       },
@@ -175,8 +165,7 @@ function SettingsDisplay() {
       dispMode,
       dispContent,
       hlYou,
-      showMaxHitInContent,
-      showRecentDPSInContent,
+      contentDisp,
       showContentDivider,
       ticker,
       tickerAlign,
