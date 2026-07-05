@@ -9,6 +9,7 @@ import {
   updateHlYou,
   updateShortName,
   updateShowMaxHitInContent,
+  updateShowRecentDPSInContent,
   updateTicker,
   updateTickerAlign,
 } from '@/store/slices/settings';
@@ -28,6 +29,9 @@ function SettingsDisplay() {
   const dispContent = useAppSelector((state) => state.settings.dispContent);
   const hlYou = useAppSelector((state) => state.settings.hlYou);
   const showMaxHitInContent = useAppSelector((state) => state.settings.showMaxHitInContent);
+  const showRecentDPSInContent = useAppSelector(
+    (state) => state.settings.showRecentDPSInContent
+  );
   const ticker = useAppSelector((state) => state.settings.ticker);
   const tickerAlign = useAppSelector((state) => state.settings.tickerAlign);
   const bottomDisp = useAppSelector((state) => state.settings.bottomDisp);
@@ -75,6 +79,15 @@ function SettingsDisplay() {
           <SSwitch
             value={showMaxHitInContent}
             onChange={(v) => dispatch(updateShowMaxHitInContent(v))}
+          />
+        ),
+      },
+      {
+        title: t('Show Recent DPS in Content'),
+        render: () => (
+          <SSwitch
+            value={showRecentDPSInContent}
+            onChange={(v) => dispatch(updateShowRecentDPSInContent(v))}
           />
         ),
       },
@@ -152,6 +165,7 @@ function SettingsDisplay() {
       dispContent,
       hlYou,
       showMaxHitInContent,
+      showRecentDPSInContent,
       ticker,
       tickerAlign,
       bottomDisp,
