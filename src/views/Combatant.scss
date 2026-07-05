@@ -64,6 +64,13 @@
       height: 0.16rem;
     }
 
+    &-divider {
+      height: 0.02rem;
+      margin: 0.02rem 0;
+      background-color: var(--color-combatant-fg);
+      opacity: 0.25;
+    }
+
     &-data {
       height: 0.16rem;
       line-height: 0.16rem;
@@ -102,12 +109,16 @@
     &-recentdps {
       height: 0.14rem;
       line-height: 0.14rem;
-      font-size: var.$font-size-xs;
-      text-align: center;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
       white-space: nowrap;
 
-      .g-counter {
-        margin-left: 0.01rem;
+      &-label {
+        font-size: var.$font-size-xs;
+        opacity: 0.55;
+        letter-spacing: 0.01rem;
+        margin-right: 0.04rem;
       }
     }
 

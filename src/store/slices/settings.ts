@@ -61,6 +61,7 @@ export interface Settings {
   hlYou: boolean;
   showMaxHitInContent: boolean;
   showRecentDPSInContent: boolean;
+  showContentDivider: boolean;
   ticker: TickerSettings;
   tickerAlign: TickerAlignSettings;
   bottomDisp: BottomDispMapKey;
@@ -99,6 +100,7 @@ export const defaultSettings: Settings = {
   hlYou: true,
   showMaxHitInContent: false,
   showRecentDPSInContent: false,
+  showContentDivider: false,
   ticker: { top: 'none', bottom: 'dps' },
   tickerAlign: { top: 'right', bottom: 'left' },
   bottomDisp: 'maxhit',
@@ -266,6 +268,11 @@ export const settingsSlice = createSlice({
       state.showRecentDPSInContent = payload;
       save({ showRecentDPSInContent: state.showRecentDPSInContent });
     },
+    updateShowContentDivider(state, { payload }: PA<boolean>) {
+      logDebug('Store::Settings::updateShowContentDivider', payload);
+      state.showContentDivider = payload;
+      save({ showContentDivider: state.showContentDivider });
+    },
     updateTicker(state, { payload }: PA<Partial<TickerSettings>>) {
       logDebug('Store::Settings::updateTicker', payload);
       state.ticker = { ...state.ticker, ...payload };
@@ -359,6 +366,7 @@ export const {
   updateHlYou,
   updateShowMaxHitInContent,
   updateShowRecentDPSInContent,
+  updateShowContentDivider,
   updateTicker,
   updateTickerAlign,
   updateBottomDisp,

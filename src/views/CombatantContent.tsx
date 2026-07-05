@@ -29,6 +29,7 @@ function CombatantContent({
   const showRecentDPSInContent = useAppSelector(
     (state) => state.settings.showRecentDPSInContent
   );
+  const showContentDivider = useAppSelector((state) => state.settings.showContentDivider);
 
   const leftDisp = (player as CombatantData)[dispContent.left] || 0;
   const leftDispUnit = MAP_DISPLAY_CONTENT[dispContent.left].data.unit;
@@ -83,6 +84,7 @@ function CombatantContent({
           <span className='g-counter'>{rightDispUnit}</span>
         </div>
       </div>
+      {showContentDivider && <div className='combatant-content-divider' />}
       {showMaxHitInContent && maxHitName && (
         <div className='combatant-content-maxhit'>
           <span>{maxHitName}</span>
@@ -91,8 +93,8 @@ function CombatantContent({
       )}
       {showRecentDPSInContent && isCombatantData(player) && (
         <div className='combatant-content-recentdps'>
+          <span className='combatant-content-recentdps-label'>60s</span>
           <span className='g-number'>{fmtNumber(player.last60DPS, shortNumber)}</span>
-          <span className='g-counter'>60s</span>
         </div>
       )}
     </div>

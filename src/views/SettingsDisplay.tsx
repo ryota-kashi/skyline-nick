@@ -8,6 +8,7 @@ import {
   updateDispMode,
   updateHlYou,
   updateShortName,
+  updateShowContentDivider,
   updateShowMaxHitInContent,
   updateShowRecentDPSInContent,
   updateTicker,
@@ -32,6 +33,7 @@ function SettingsDisplay() {
   const showRecentDPSInContent = useAppSelector(
     (state) => state.settings.showRecentDPSInContent
   );
+  const showContentDivider = useAppSelector((state) => state.settings.showContentDivider);
   const ticker = useAppSelector((state) => state.settings.ticker);
   const tickerAlign = useAppSelector((state) => state.settings.tickerAlign);
   const bottomDisp = useAppSelector((state) => state.settings.bottomDisp);
@@ -88,6 +90,15 @@ function SettingsDisplay() {
           <SSwitch
             value={showRecentDPSInContent}
             onChange={(v) => dispatch(updateShowRecentDPSInContent(v))}
+          />
+        ),
+      },
+      {
+        title: t('Show Divider Below DPS'),
+        render: () => (
+          <SSwitch
+            value={showContentDivider}
+            onChange={(v) => dispatch(updateShowContentDivider(v))}
           />
         ),
       },
@@ -166,6 +177,7 @@ function SettingsDisplay() {
       hlYou,
       showMaxHitInContent,
       showRecentDPSInContent,
+      showContentDivider,
       ticker,
       tickerAlign,
       bottomDisp,
